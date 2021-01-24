@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_search"
+        android:icon="@drawable/ic_baseline_search_24"
+        android:title="Search"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"
+        app:showAsAction="ifRoom|collapseActionView"
+        />
+    <item
+        android:id="@+id/mdeathMax"
+        android:title="Death Max"
+        android:icon="@drawable/ic_baseline_leaderboard_24"/>
+    <item
+        android:id="@+id/mdeathMin"
+        android:title="Death Min"
+        android:icon="@drawable/ic_baseline_leaderboard_24"/>
+
+    <item
+        android:id="@+id/mcasesMax"
+        android:title="Cases Max"
+        android:icon="@drawable/ic_baseline_leaderboard_24"/>
+    <item
+        android:id="@+id/mcasesMin"
+        android:title="Cases Min"
+        android:icon="@drawable/ic_baseline_leaderboard_24"/>
+
+    <item
+        android:id="@+id/mnewcaseMax"
+        android:title="New Cases Max"
+        android:icon="@drawable/ic_baseline_leaderboard_24"/>
+    <item
+        android:id="@+id/mnewcaseMin"
+        android:title="New Cases  Min"
+        android:icon="@drawable/ic_baseline_leaderboard_24"/>
+</menu>

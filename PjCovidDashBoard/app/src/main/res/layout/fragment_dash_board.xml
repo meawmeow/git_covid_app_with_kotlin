@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:clickable="true"
+    tools:context=".ui.view.fragments.DashBoardFragment">
+
+    <FrameLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.github.aachartmodel.aainfographics.aachartcreator.AAChartView
+            android:layout_weight="1"
+            android:id="@+id/aa_chart_view_case_thai"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible">
+
+        </com.github.aachartmodel.aainfographics.aachartcreator.AAChartView>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_gravity="bottom"
+            android:id="@+id/la_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:layout_marginLeft="5dp"
+                android:id="@+id/btn_Back"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_baseline_navigate_before_24"/>
+            <View
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"/>
+            <Button
+                android:layout_marginRight="5dp"
+                android:id="@+id/btn_Next"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_baseline_navigate_next_24"/>
+        </LinearLayout>
+    </FrameLayout>
+
+
+
+
+    <ProgressBar
+        android:id="@+id/progress_bar_cases_thai"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|center_vertical" />
+</FrameLayout>

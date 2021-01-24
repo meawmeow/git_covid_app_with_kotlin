@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="mainviewmodel"
+            type="meaw.meow.pjcoviddashboard.ui.viewmodel.MainViewModel" />
+    </data>
+    <FrameLayout
+        android:id="@+id/root_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#E8E6E6"
+        tools:context=".ui.dashboard.DashBoardFragment">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyc_countries"
+            tools:listitem="@layout/countries_row_item"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <ProgressBar
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </FrameLayout>
+</layout>

@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="mainViewModel"
+            type="meaw.meow.pjcoviddashboard.ui.viewmodel.MainViewModel" />
+
+        <import type="meaw.meow.pjcoviddashboard.utils.ResourceUtilsKt" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#fff"
+        android:clickable="true"
+        tools:context=".ui.view.fragments.CountryDetailFragment">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="#F4F4F4"
+                    app:cardCornerRadius="5dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <ImageView
+                            android:layout_margin="5dp"
+                            android:layout_gravity="center"
+                            android:layout_width="100dp"
+                            android:layout_height="70dp"
+                            android:background="#353535"
+                            android:scaleType="centerInside"
+                            app:image="@{mainViewModel.countriesResponseItem.countryInfo.flag}" />
+                        <TextView
+                            android:layout_margin="5dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text='@{ResourceUtilsKt.formatNumber("Population: ",mainViewModel.countriesResponseItem.population+"")}'
+                            android:textColor="@color/teal_700"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        app:cardBackgroundColor="#FF6D00"
+                        app:cardCornerRadius="5dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text='@{ResourceUtilsKt.formatNumber(mainViewModel.countriesResponseItem.todayCases+"")}'
+                                android:textColor="#FFFFFF"
+                                android:textSize="22sp" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:background="@drawable/title_corners_new_cases_shape"
+                                android:text=" New Cases"
+                                android:textColor="#FFFFFF"
+                                android:textSize="18sp" />
+                        </RelativeLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        app:cardBackgroundColor="#00BFA5"
+                        app:cardCornerRadius="5dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_centerInParent="true"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text='@{ResourceUtilsKt.formatNumber(mainViewModel.countriesResponseItem.todayRecovered+"")}'
+                                android:textColor="#FFFFFF"
+                                android:textSize="22sp" />
+                            <TextView
+                                android:layout_alignParentBottom="true"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text=" New Recovered"
+                                android:textColor="#FFFFFF"
+                                android:background="@drawable/title_corners_new_recover_shape"
+                                android:textSize="18sp" />
+                        </RelativeLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_margin="5dp"
+                    app:cardBackgroundColor="#D50000"
+                    app:cardCornerRadius="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text='@{ResourceUtilsKt.formatNumber("New Deaths: ",mainViewModel.countriesResponseItem.todayDeaths+"")}'
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        app:cardBackgroundColor="#FFB114"
+                        app:cardCornerRadius="5dp">
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                            <TextView
+                                android:layout_centerInParent="true"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text='@{ResourceUtilsKt.formatNumber(mainViewModel.countriesResponseItem.cases+"")}'
+                                android:textColor="#FFFFFF"
+                                android:textSize="22sp" />
+                            <TextView
+                                android:layout_alignParentBottom="true"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text=" Total Cases"
+                                android:textColor="#FFFFFF"
+                                android:background="@drawable/title_corners_total_cases_shape"
+                                android:textSize="18sp" />
+                        </RelativeLayout>
+
+
+                    </com.google.android.material.card.MaterialCardView>
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        app:cardBackgroundColor="#19B158"
+                        app:cardCornerRadius="5dp">
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text='@{ResourceUtilsKt.formatNumber(mainViewModel.countriesResponseItem.recovered+"")}'
+                                android:textColor="#FFFFFF"
+                                android:textSize="22sp" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:text=" Recovered"
+                                android:textColor="#FFFFFF"
+                                android:background="@drawable/title_corners_recovered_shape"
+                                android:textSize="18sp" />
+                        </RelativeLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_margin="5dp"
+                    app:cardBackgroundColor="#C51162"
+                    app:cardCornerRadius="5dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text='@{ResourceUtilsKt.formatNumber("Total Deaths: ",mainViewModel.countriesResponseItem.deaths+"")}'
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp" />
+                </com.google.android.material.card.MaterialCardView>
+
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_margin="5dp"
+                    app:cardBackgroundColor="#00B8D4"
+                    app:cardCornerRadius="5dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text='@{ResourceUtilsKt.formatNumber("Active Cases: ",mainViewModel.countriesResponseItem.active+"")}'
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp" />
+                </com.google.android.material.card.MaterialCardView>
+                <Button
+                    android:id="@+id/btn_Historical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Historical Click!"
+                    android:layout_gravity="center"/>
+            </LinearLayout>
+        </ScrollView>
+
+    </RelativeLayout>
+</layout>
